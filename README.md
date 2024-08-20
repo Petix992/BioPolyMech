@@ -17,3 +17,13 @@ The project aims to simplify the process of extracting, filtering, and visualizi
 - Multiple plotting modes to meet the specific needs of users.
 - Features like zoom, panning, and saving visualizations.
 - Ability to overlay multiple datasets for direct comparison.
+
+### 4. Windows Executable Creation
+- Implementation of the ability to create a standalone executable for Windows environments, allowing the application to be run without requiring a Python installation.
+
+## Requirements
+Python Python >= 3.12.4 installed
+
+## Collaborations
+This project is developed in collaboration with Dr. Marika Avitabile
+https://www.linkedin.com/in/marika-avitabile-270472185/
