@@ -20,6 +20,9 @@ class FolderSelectorApp:
         folder_selected = filedialog.askdirectory()
         if folder_selected:
             self.label.config(text=f"Selected Folder: {folder_selected}")
-            messagebox.showinfo("Selected Folder", f"You have selected: {folder_selected}")
+            messagebox.showinfo("Folder Selected", f"Rawdata in: {folder_selected}")
+            self.selected_folder = folder_selected
+            self.root.destroy()
         else:
-            messagebox.showwarning("No folder Selected", "No Folder ave been Selected")
+            messagebox.showwarning("No folder Selected", "No Folder has been Selected")
+            self.selected_folder = None
