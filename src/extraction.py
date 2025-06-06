@@ -20,12 +20,13 @@ def enrich_dataset(dataset_path, rawdata_path ,dataset):
         enriched_dataset = enriched_dataset._append(df, ignore_index=True)
     #Removing "," from Modulus (Young's Tensile stress - Cursor) values
     enriched_dataset["Modulus (Young's Tensile stress - Cursor)"] = enriched_dataset["Modulus (Young's Tensile stress - Cursor)"].str.replace(',', '')
-    #Renaming column
-    enriched_dataset = enriched_dataset.rename(columns={"Modulus (Young's Tensile stress - Cursor)": "Young's Modulus"})
+    #Renaming columns
+    enriched_dataset = enriched_dataset.rename(columns={
+        "Modulus (Young's Tensile stress - Cursor)": "Young's Modulus",
+        "Tensile stress at Break (Standard)": "Tensile Strenght",
+        "Tensile strain at Break (Standard)": "Elongation at Break"
+    })
     #Converting in float
     enriched_dataset.iloc[:, :5] = enriched_dataset.iloc[:, :5].astype(float)
     print(enriched_dataset)
     return enriched_dataset
-
-#Filtering for range
-#df_dataset = df_dataset[df_dataset["Modulus (Young's Tensile stress - Cursor)"].between(700, 900)]
